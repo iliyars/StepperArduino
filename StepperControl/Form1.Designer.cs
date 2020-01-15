@@ -46,6 +46,7 @@
             this.cb_parityBits = new System.Windows.Forms.ComboBox();
             this.btn_disconect = new System.Windows.Forms.Button();
             this.pb_status = new System.Windows.Forms.ProgressBar();
+            this.btn_send = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_connection
@@ -197,6 +198,7 @@
             this.btn_disconect.TabIndex = 0;
             this.btn_disconect.Text = "Отключиться";
             this.btn_disconect.UseVisualStyleBackColor = true;
+            this.btn_disconect.Click += new System.EventHandler(this.Btn_disconect_Click);
             // 
             // pb_status
             // 
@@ -205,11 +207,22 @@
             this.pb_status.Size = new System.Drawing.Size(209, 23);
             this.pb_status.TabIndex = 11;
             // 
+            // btn_send
+            // 
+            this.btn_send.Location = new System.Drawing.Point(408, 229);
+            this.btn_send.Name = "btn_send";
+            this.btn_send.Size = new System.Drawing.Size(75, 23);
+            this.btn_send.TabIndex = 12;
+            this.btn_send.Text = "Старт";
+            this.btn_send.UseVisualStyleBackColor = true;
+            this.btn_send.Click += new System.EventHandler(this.Btn_send_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_send);
             this.Controls.Add(this.pb_status);
             this.Controls.Add(this.l_parityBits);
             this.Controls.Add(this.l_stopBits);
@@ -253,6 +266,7 @@
         private System.Windows.Forms.ComboBox cb_parityBits;
         private System.Windows.Forms.Button btn_disconect;
         private System.Windows.Forms.ProgressBar pb_status;
+        private System.Windows.Forms.Button btn_send;
     }
 }
 

@@ -13,6 +13,7 @@ namespace StepperControl
 {
     public partial class Form1 : Form
     {
+        string dataOUT;
         public Form1()
         {
             InitializeComponent();
@@ -42,6 +43,24 @@ namespace StepperControl
                 MessageBox.Show(err.Message,"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
+        }
+
+        private void Btn_disconect_Click(object sender, EventArgs e)
+        {
+            if(serialPort1.IsOpen)
+            {
+                serialPort1.Close();
+                pb_status.Value = 0;
+            }
+        }
+
+        private void Btn_send_Click(object sender, EventArgs e)
+        {
+            if (serialPort1.IsOpen)
+            {
+                dataOUT = tb_angle.Text;
+                serialPort1.WriteLine(dataOUT);
+            }
         }
     }
 }
