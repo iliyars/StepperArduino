@@ -47,11 +47,27 @@
             this.btn_disconect = new System.Windows.Forms.Button();
             this.pb_status = new System.Windows.Forms.ProgressBar();
             this.btn_send = new System.Windows.Forms.Button();
+            this.tb_maxSpeed = new System.Windows.Forms.TextBox();
+            this.tb_acceleretion = new System.Windows.Forms.TextBox();
+            this.tb_deceleration = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cb_front = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cb_dir = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.gb_comFields = new System.Windows.Forms.GroupBox();
+            this.gb_connecionBtns = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gb_comFields.SuspendLayout();
+            this.gb_connecionBtns.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_connection
             // 
-            this.btn_connection.Location = new System.Drawing.Point(12, 196);
+            this.btn_connection.Location = new System.Drawing.Point(0, 23);
             this.btn_connection.Name = "btn_connection";
             this.btn_connection.Size = new System.Drawing.Size(99, 40);
             this.btn_connection.TabIndex = 0;
@@ -62,7 +78,7 @@
             // cb_port
             // 
             this.cb_port.FormattingEnabled = true;
-            this.cb_port.Location = new System.Drawing.Point(100, 48);
+            this.cb_port.Location = new System.Drawing.Point(102, 19);
             this.cb_port.Name = "cb_port";
             this.cb_port.Size = new System.Drawing.Size(121, 21);
             this.cb_port.TabIndex = 1;
@@ -70,7 +86,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 56);
+            this.label1.Location = new System.Drawing.Point(11, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 2;
@@ -83,7 +99,7 @@
             "2400",
             "4800",
             "9600"});
-            this.cb_boundRate.Location = new System.Drawing.Point(100, 75);
+            this.cb_boundRate.Location = new System.Drawing.Point(102, 46);
             this.cb_boundRate.Name = "cb_boundRate";
             this.cb_boundRate.Size = new System.Drawing.Size(121, 21);
             this.cb_boundRate.TabIndex = 3;
@@ -92,7 +108,7 @@
             // l_baudRate
             // 
             this.l_baudRate.AutoSize = true;
-            this.l_baudRate.Location = new System.Drawing.Point(9, 83);
+            this.l_baudRate.Location = new System.Drawing.Point(11, 54);
             this.l_baudRate.Name = "l_baudRate";
             this.l_baudRate.Size = new System.Drawing.Size(79, 13);
             this.l_baudRate.TabIndex = 4;
@@ -100,32 +116,36 @@
             // 
             // tb_recive
             // 
-            this.tb_recive.Location = new System.Drawing.Point(12, 279);
+            this.tb_recive.Location = new System.Drawing.Point(12, 295);
             this.tb_recive.Multiline = true;
             this.tb_recive.Name = "tb_recive";
-            this.tb_recive.Size = new System.Drawing.Size(533, 116);
+            this.tb_recive.Size = new System.Drawing.Size(508, 116);
             this.tb_recive.TabIndex = 5;
             // 
             // tb_angle
             // 
-            this.tb_angle.Location = new System.Drawing.Point(334, 48);
+            this.tb_angle.Location = new System.Drawing.Point(145, 20);
             this.tb_angle.Name = "tb_angle";
-            this.tb_angle.Size = new System.Drawing.Size(121, 20);
+            this.tb_angle.Size = new System.Drawing.Size(103, 20);
             this.tb_angle.TabIndex = 6;
             // 
             // L_angle
             // 
             this.L_angle.AutoSize = true;
-            this.L_angle.Location = new System.Drawing.Point(267, 51);
+            this.L_angle.Location = new System.Drawing.Point(16, 31);
             this.L_angle.Name = "L_angle";
             this.L_angle.Size = new System.Drawing.Size(61, 13);
             this.L_angle.TabIndex = 7;
             this.L_angle.Text = "Угол, град";
             // 
+            // serialPort1
+            // 
+            this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.SerialPort1_DataReceived);
+            // 
             // l_dataBits
             // 
             this.l_dataBits.AutoSize = true;
-            this.l_dataBits.Location = new System.Drawing.Point(9, 109);
+            this.l_dataBits.Location = new System.Drawing.Point(11, 80);
             this.l_dataBits.Name = "l_dataBits";
             this.l_dataBits.Size = new System.Drawing.Size(61, 13);
             this.l_dataBits.TabIndex = 8;
@@ -134,7 +154,7 @@
             // l_stopBits
             // 
             this.l_stopBits.AutoSize = true;
-            this.l_stopBits.Location = new System.Drawing.Point(9, 135);
+            this.l_stopBits.Location = new System.Drawing.Point(11, 106);
             this.l_stopBits.Name = "l_stopBits";
             this.l_stopBits.Size = new System.Drawing.Size(87, 13);
             this.l_stopBits.TabIndex = 9;
@@ -143,7 +163,7 @@
             // l_parityBits
             // 
             this.l_parityBits.AutoSize = true;
-            this.l_parityBits.Location = new System.Drawing.Point(9, 157);
+            this.l_parityBits.Location = new System.Drawing.Point(11, 128);
             this.l_parityBits.Name = "l_parityBits";
             this.l_parityBits.Size = new System.Drawing.Size(73, 13);
             this.l_parityBits.TabIndex = 10;
@@ -156,7 +176,7 @@
             "6",
             "7",
             "8"});
-            this.cb_dataBits.Location = new System.Drawing.Point(100, 101);
+            this.cb_dataBits.Location = new System.Drawing.Point(102, 72);
             this.cb_dataBits.Name = "cb_dataBits";
             this.cb_dataBits.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cb_dataBits.Size = new System.Drawing.Size(121, 21);
@@ -169,7 +189,7 @@
             this.cb_stopBits.Items.AddRange(new object[] {
             "1",
             "2"});
-            this.cb_stopBits.Location = new System.Drawing.Point(100, 127);
+            this.cb_stopBits.Location = new System.Drawing.Point(102, 98);
             this.cb_stopBits.Name = "cb_stopBits";
             this.cb_stopBits.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cb_stopBits.Size = new System.Drawing.Size(121, 21);
@@ -183,7 +203,7 @@
             "None",
             "Odd",
             "Even"});
-            this.cb_parityBits.Location = new System.Drawing.Point(100, 153);
+            this.cb_parityBits.Location = new System.Drawing.Point(102, 124);
             this.cb_parityBits.Name = "cb_parityBits";
             this.cb_parityBits.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cb_parityBits.Size = new System.Drawing.Size(121, 21);
@@ -192,7 +212,7 @@
             // 
             // btn_disconect
             // 
-            this.btn_disconect.Location = new System.Drawing.Point(122, 196);
+            this.btn_disconect.Location = new System.Drawing.Point(112, 23);
             this.btn_disconect.Name = "btn_disconect";
             this.btn_disconect.Size = new System.Drawing.Size(99, 40);
             this.btn_disconect.TabIndex = 0;
@@ -202,46 +222,177 @@
             // 
             // pb_status
             // 
-            this.pb_status.Location = new System.Drawing.Point(12, 242);
+            this.pb_status.Location = new System.Drawing.Point(2, 69);
             this.pb_status.Name = "pb_status";
             this.pb_status.Size = new System.Drawing.Size(209, 23);
             this.pb_status.TabIndex = 11;
             // 
             // btn_send
             // 
-            this.btn_send.Location = new System.Drawing.Point(408, 229);
+            this.btn_send.Location = new System.Drawing.Point(16, 191);
             this.btn_send.Name = "btn_send";
-            this.btn_send.Size = new System.Drawing.Size(75, 23);
+            this.btn_send.Size = new System.Drawing.Size(75, 40);
             this.btn_send.TabIndex = 12;
             this.btn_send.Text = "Старт";
             this.btn_send.UseVisualStyleBackColor = true;
             this.btn_send.Click += new System.EventHandler(this.Btn_send_Click);
             // 
+            // tb_maxSpeed
+            // 
+            this.tb_maxSpeed.Location = new System.Drawing.Point(145, 49);
+            this.tb_maxSpeed.Name = "tb_maxSpeed";
+            this.tb_maxSpeed.Size = new System.Drawing.Size(103, 20);
+            this.tb_maxSpeed.TabIndex = 13;
+            // 
+            // tb_acceleretion
+            // 
+            this.tb_acceleretion.Location = new System.Drawing.Point(145, 75);
+            this.tb_acceleretion.Name = "tb_acceleretion";
+            this.tb_acceleretion.Size = new System.Drawing.Size(103, 20);
+            this.tb_acceleretion.TabIndex = 13;
+            // 
+            // tb_deceleration
+            // 
+            this.tb_deceleration.Location = new System.Drawing.Point(145, 102);
+            this.tb_deceleration.Name = "tb_deceleration";
+            this.tb_deceleration.Size = new System.Drawing.Size(103, 20);
+            this.tb_deceleration.TabIndex = 13;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(16, 56);
+            this.label2.Name = "label2";
+            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label2.Size = new System.Drawing.Size(123, 13);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Макс. скорость, шаг/с";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 82);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(105, 13);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Ускорние, шаг/с^2";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 109);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(120, 13);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Торможение, шаг/с^2";
+            // 
+            // cb_front
+            // 
+            this.cb_front.FormattingEnabled = true;
+            this.cb_front.Items.AddRange(new object[] {
+            "Линейны",
+            "S-кривая",
+            "Sin"});
+            this.cb_front.Location = new System.Drawing.Point(145, 129);
+            this.cb_front.Name = "cb_front";
+            this.cb_front.Size = new System.Drawing.Size(103, 21);
+            this.cb_front.TabIndex = 16;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(16, 137);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(82, 13);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Тип ускорения";
+            // 
+            // cb_dir
+            // 
+            this.cb_dir.FormattingEnabled = true;
+            this.cb_dir.Location = new System.Drawing.Point(145, 156);
+            this.cb_dir.Name = "cb_dir";
+            this.cb_dir.Size = new System.Drawing.Size(103, 21);
+            this.cb_dir.TabIndex = 16;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(16, 162);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(75, 13);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Направление";
+            // 
+            // gb_comFields
+            // 
+            this.gb_comFields.Controls.Add(this.l_parityBits);
+            this.gb_comFields.Controls.Add(this.l_stopBits);
+            this.gb_comFields.Controls.Add(this.l_dataBits);
+            this.gb_comFields.Controls.Add(this.l_baudRate);
+            this.gb_comFields.Controls.Add(this.cb_parityBits);
+            this.gb_comFields.Controls.Add(this.cb_stopBits);
+            this.gb_comFields.Controls.Add(this.cb_dataBits);
+            this.gb_comFields.Controls.Add(this.cb_boundRate);
+            this.gb_comFields.Controls.Add(this.label1);
+            this.gb_comFields.Controls.Add(this.cb_port);
+            this.gb_comFields.Location = new System.Drawing.Point(12, 23);
+            this.gb_comFields.Name = "gb_comFields";
+            this.gb_comFields.Size = new System.Drawing.Size(229, 161);
+            this.gb_comFields.TabIndex = 17;
+            this.gb_comFields.TabStop = false;
+            this.gb_comFields.Text = "парметры COM-порта";
+            // 
+            // gb_connecionBtns
+            // 
+            this.gb_connecionBtns.Controls.Add(this.pb_status);
+            this.gb_connecionBtns.Controls.Add(this.btn_disconect);
+            this.gb_connecionBtns.Controls.Add(this.btn_connection);
+            this.gb_connecionBtns.Location = new System.Drawing.Point(10, 191);
+            this.gb_connecionBtns.Name = "gb_connecionBtns";
+            this.gb_connecionBtns.Size = new System.Drawing.Size(230, 98);
+            this.gb_connecionBtns.TabIndex = 18;
+            this.gb_connecionBtns.TabStop = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cb_dir);
+            this.groupBox1.Controls.Add(this.cb_front);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.tb_deceleration);
+            this.groupBox1.Controls.Add(this.tb_acceleretion);
+            this.groupBox1.Controls.Add(this.tb_maxSpeed);
+            this.groupBox1.Controls.Add(this.btn_send);
+            this.groupBox1.Controls.Add(this.L_angle);
+            this.groupBox1.Controls.Add(this.tb_angle);
+            this.groupBox1.Location = new System.Drawing.Point(247, 23);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(273, 265);
+            this.groupBox1.TabIndex = 19;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Параметры движения";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btn_send);
-            this.Controls.Add(this.pb_status);
-            this.Controls.Add(this.l_parityBits);
-            this.Controls.Add(this.l_stopBits);
-            this.Controls.Add(this.l_dataBits);
-            this.Controls.Add(this.L_angle);
-            this.Controls.Add(this.tb_angle);
+            this.ClientSize = new System.Drawing.Size(562, 450);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gb_connecionBtns);
+            this.Controls.Add(this.gb_comFields);
             this.Controls.Add(this.tb_recive);
-            this.Controls.Add(this.l_baudRate);
-            this.Controls.Add(this.cb_parityBits);
-            this.Controls.Add(this.cb_stopBits);
-            this.Controls.Add(this.cb_dataBits);
-            this.Controls.Add(this.cb_boundRate);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.cb_port);
-            this.Controls.Add(this.btn_disconect);
-            this.Controls.Add(this.btn_connection);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "StepperControl";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.gb_comFields.ResumeLayout(false);
+            this.gb_comFields.PerformLayout();
+            this.gb_connecionBtns.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,6 +418,19 @@
         private System.Windows.Forms.Button btn_disconect;
         private System.Windows.Forms.ProgressBar pb_status;
         private System.Windows.Forms.Button btn_send;
+        private System.Windows.Forms.TextBox tb_maxSpeed;
+        private System.Windows.Forms.TextBox tb_acceleretion;
+        private System.Windows.Forms.TextBox tb_deceleration;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cb_front;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cb_dir;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox gb_comFields;
+        private System.Windows.Forms.GroupBox gb_connecionBtns;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 

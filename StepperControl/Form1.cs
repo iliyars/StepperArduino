@@ -14,6 +14,7 @@ namespace StepperControl
     public partial class Form1 : Form
     {
         string dataOUT;
+        string dataIN;
         public Form1()
         {
             InitializeComponent();
@@ -23,6 +24,8 @@ namespace StepperControl
         {
             string[] ports = SerialPort.GetPortNames();
             cb_port.Items.AddRange(ports);
+            btn_disconect.Enabled = false;
+            btn_connection.Enabled = true;
             
         }
 
@@ -38,6 +41,8 @@ namespace StepperControl
 
                 serialPort1.Open();
                 pb_status.Value = 100;
+                btn_connection.Enabled = false;
+                btn_disconect.Enabled = true;
             }
             catch (Exception err){
                 MessageBox.Show(err.Message,"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -51,6 +56,8 @@ namespace StepperControl
             {
                 serialPort1.Close();
                 pb_status.Value = 0;
+                btn_connection.Enabled = true;
+                btn_disconect.Enabled = false;
             }
         }
 
@@ -58,9 +65,20 @@ namespace StepperControl
         {
             if (serialPort1.IsOpen)
             {
-                dataOUT = tb_angle.Text;
+                dataOUT = tb_angle.Text+ tb_acceleretion.Text;
                 serialPort1.WriteLine(dataOUT);
             }
+        }
+
+        private void SerialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            dataIN = serialPort1.ReadExisting();
+            this.Invoke(new EventHandler(ShowData));
+        }
+
+        private void ShowData(object sender, EventArgs e)
+        {
+            tb_recive.Text = dataIN;
         }
     }
 }
