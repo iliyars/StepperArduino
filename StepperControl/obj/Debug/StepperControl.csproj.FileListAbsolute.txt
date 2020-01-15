@@ -1,0 +1,10 @@
+C:\Users\ilia\source\repos\StepperControl\StepperControl\bin\Debug\StepperControl.exe.config
+C:\Users\ilia\source\repos\StepperControl\StepperControl\bin\Debug\StepperControl.exe
+C:\Users\ilia\source\repos\StepperControl\StepperControl\bin\Debug\StepperControl.pdb
+C:\Users\ilia\source\repos\StepperControl\StepperControl\obj\Debug\StepperControl.csprojAssemblyReference.cache
+C:\Users\ilia\source\repos\StepperControl\StepperControl\obj\Debug\StepperControl.Form1.resources
+C:\Users\ilia\source\repos\StepperControl\StepperControl\obj\Debug\StepperControl.Properties.Resources.resources
+C:\Users\ilia\source\repos\StepperControl\StepperControl\obj\Debug\StepperControl.csproj.GenerateResource.cache
+C:\Users\ilia\source\repos\StepperControl\StepperControl\obj\Debug\StepperControl.csproj.CoreCompileInputs.cache
+C:\Users\ilia\source\repos\StepperControl\StepperControl\obj\Debug\StepperControl.exe
+C:\Users\ilia\source\repos\StepperControl\StepperControl\obj\Debug\StepperControl.pdb
