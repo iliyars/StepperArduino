@@ -61,16 +61,25 @@
             this.gb_connecionBtns = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
             this.gb_comFields.SuspendLayout();
             this.gb_connecionBtns.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_connection
             // 
-            this.btn_connection.Location = new System.Drawing.Point(0, 23);
+            this.btn_connection.Location = new System.Drawing.Point(0, 28);
+            this.btn_connection.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_connection.Name = "btn_connection";
-            this.btn_connection.Size = new System.Drawing.Size(99, 40);
+            this.btn_connection.Size = new System.Drawing.Size(132, 49);
             this.btn_connection.TabIndex = 0;
             this.btn_connection.Text = "Подключиться";
             this.btn_connection.UseVisualStyleBackColor = true;
@@ -79,17 +88,19 @@
             // cb_port
             // 
             this.cb_port.FormattingEnabled = true;
-            this.cb_port.Location = new System.Drawing.Point(102, 19);
+            this.cb_port.Location = new System.Drawing.Point(136, 23);
+            this.cb_port.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cb_port.Name = "cb_port";
-            this.cb_port.Size = new System.Drawing.Size(121, 21);
+            this.cb_port.Size = new System.Drawing.Size(160, 24);
             this.cb_port.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 27);
+            this.label1.Location = new System.Drawing.Point(15, 33);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.Size = new System.Drawing.Size(75, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "СOM-порт";
             // 
@@ -101,34 +112,38 @@
             "4800",
             "9600",
             "115200"});
-            this.cb_boundRate.Location = new System.Drawing.Point(102, 46);
+            this.cb_boundRate.Location = new System.Drawing.Point(136, 57);
+            this.cb_boundRate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cb_boundRate.Name = "cb_boundRate";
-            this.cb_boundRate.Size = new System.Drawing.Size(121, 21);
+            this.cb_boundRate.Size = new System.Drawing.Size(160, 24);
             this.cb_boundRate.TabIndex = 3;
             this.cb_boundRate.Text = "115200";
             // 
             // l_baudRate
             // 
             this.l_baudRate.AutoSize = true;
-            this.l_baudRate.Location = new System.Drawing.Point(11, 54);
+            this.l_baudRate.Location = new System.Drawing.Point(15, 66);
+            this.l_baudRate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.l_baudRate.Name = "l_baudRate";
-            this.l_baudRate.Size = new System.Drawing.Size(79, 13);
+            this.l_baudRate.Size = new System.Drawing.Size(101, 17);
             this.l_baudRate.TabIndex = 4;
             this.l_baudRate.Text = "Скорость, бод";
             // 
             // tb_recive
             // 
-            this.tb_recive.Location = new System.Drawing.Point(12, 295);
+            this.tb_recive.Location = new System.Drawing.Point(16, 363);
+            this.tb_recive.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tb_recive.Multiline = true;
             this.tb_recive.Name = "tb_recive";
-            this.tb_recive.Size = new System.Drawing.Size(508, 116);
+            this.tb_recive.Size = new System.Drawing.Size(676, 142);
             this.tb_recive.TabIndex = 5;
             // 
             // tb_angle
             // 
-            this.tb_angle.Location = new System.Drawing.Point(145, 20);
+            this.tb_angle.Location = new System.Drawing.Point(176, 339);
+            this.tb_angle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tb_angle.Name = "tb_angle";
-            this.tb_angle.Size = new System.Drawing.Size(103, 20);
+            this.tb_angle.Size = new System.Drawing.Size(136, 22);
             this.tb_angle.TabIndex = 6;
             this.tb_angle.Text = "0";
             this.tb_angle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Tb_angle_KeyPress);
@@ -136,9 +151,10 @@
             // L_angle
             // 
             this.L_angle.AutoSize = true;
-            this.L_angle.Location = new System.Drawing.Point(16, 31);
+            this.L_angle.Location = new System.Drawing.Point(21, 38);
+            this.L_angle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.L_angle.Name = "L_angle";
-            this.L_angle.Size = new System.Drawing.Size(61, 13);
+            this.L_angle.Size = new System.Drawing.Size(75, 17);
             this.L_angle.TabIndex = 7;
             this.L_angle.Text = "Угол, град";
             // 
@@ -149,27 +165,30 @@
             // l_dataBits
             // 
             this.l_dataBits.AutoSize = true;
-            this.l_dataBits.Location = new System.Drawing.Point(11, 80);
+            this.l_dataBits.Location = new System.Drawing.Point(15, 98);
+            this.l_dataBits.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.l_dataBits.Name = "l_dataBits";
-            this.l_dataBits.Size = new System.Drawing.Size(61, 13);
+            this.l_dataBits.Size = new System.Drawing.Size(80, 17);
             this.l_dataBits.TabIndex = 8;
             this.l_dataBits.Text = "Кол-во бит";
             // 
             // l_stopBits
             // 
             this.l_stopBits.AutoSize = true;
-            this.l_stopBits.Location = new System.Drawing.Point(11, 106);
+            this.l_stopBits.Location = new System.Drawing.Point(15, 130);
+            this.l_stopBits.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.l_stopBits.Name = "l_stopBits";
-            this.l_stopBits.Size = new System.Drawing.Size(87, 13);
+            this.l_stopBits.Size = new System.Drawing.Size(115, 17);
             this.l_stopBits.TabIndex = 9;
             this.l_stopBits.Text = "Кол-во стоп-бит";
             // 
             // l_parityBits
             // 
             this.l_parityBits.AutoSize = true;
-            this.l_parityBits.Location = new System.Drawing.Point(11, 128);
+            this.l_parityBits.Location = new System.Drawing.Point(15, 158);
+            this.l_parityBits.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.l_parityBits.Name = "l_parityBits";
-            this.l_parityBits.Size = new System.Drawing.Size(73, 13);
+            this.l_parityBits.Size = new System.Drawing.Size(97, 17);
             this.l_parityBits.TabIndex = 10;
             this.l_parityBits.Text = "Бит чётности";
             // 
@@ -180,10 +199,11 @@
             "6",
             "7",
             "8"});
-            this.cb_dataBits.Location = new System.Drawing.Point(102, 72);
+            this.cb_dataBits.Location = new System.Drawing.Point(136, 89);
+            this.cb_dataBits.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cb_dataBits.Name = "cb_dataBits";
             this.cb_dataBits.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cb_dataBits.Size = new System.Drawing.Size(121, 21);
+            this.cb_dataBits.Size = new System.Drawing.Size(160, 24);
             this.cb_dataBits.TabIndex = 3;
             this.cb_dataBits.Text = "8";
             // 
@@ -193,10 +213,11 @@
             this.cb_stopBits.Items.AddRange(new object[] {
             "1",
             "2"});
-            this.cb_stopBits.Location = new System.Drawing.Point(102, 98);
+            this.cb_stopBits.Location = new System.Drawing.Point(136, 121);
+            this.cb_stopBits.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cb_stopBits.Name = "cb_stopBits";
             this.cb_stopBits.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cb_stopBits.Size = new System.Drawing.Size(121, 21);
+            this.cb_stopBits.Size = new System.Drawing.Size(160, 24);
             this.cb_stopBits.TabIndex = 3;
             this.cb_stopBits.Text = "1";
             // 
@@ -207,18 +228,20 @@
             "None",
             "Odd",
             "Even"});
-            this.cb_parityBits.Location = new System.Drawing.Point(102, 124);
+            this.cb_parityBits.Location = new System.Drawing.Point(136, 153);
+            this.cb_parityBits.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cb_parityBits.Name = "cb_parityBits";
             this.cb_parityBits.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cb_parityBits.Size = new System.Drawing.Size(121, 21);
+            this.cb_parityBits.Size = new System.Drawing.Size(160, 24);
             this.cb_parityBits.TabIndex = 3;
             this.cb_parityBits.Text = "None";
             // 
             // btn_disconect
             // 
-            this.btn_disconect.Location = new System.Drawing.Point(112, 23);
+            this.btn_disconect.Location = new System.Drawing.Point(149, 28);
+            this.btn_disconect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_disconect.Name = "btn_disconect";
-            this.btn_disconect.Size = new System.Drawing.Size(99, 40);
+            this.btn_disconect.Size = new System.Drawing.Size(132, 49);
             this.btn_disconect.TabIndex = 0;
             this.btn_disconect.Text = "Отключиться";
             this.btn_disconect.UseVisualStyleBackColor = true;
@@ -226,16 +249,18 @@
             // 
             // pb_status
             // 
-            this.pb_status.Location = new System.Drawing.Point(2, 69);
+            this.pb_status.Location = new System.Drawing.Point(3, 85);
+            this.pb_status.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pb_status.Name = "pb_status";
-            this.pb_status.Size = new System.Drawing.Size(209, 23);
+            this.pb_status.Size = new System.Drawing.Size(279, 28);
             this.pb_status.TabIndex = 11;
             // 
             // btn_send
             // 
-            this.btn_send.Location = new System.Drawing.Point(16, 191);
+            this.btn_send.Location = new System.Drawing.Point(21, 235);
+            this.btn_send.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_send.Name = "btn_send";
-            this.btn_send.Size = new System.Drawing.Size(75, 40);
+            this.btn_send.Size = new System.Drawing.Size(100, 49);
             this.btn_send.TabIndex = 12;
             this.btn_send.Text = "Старт";
             this.btn_send.UseVisualStyleBackColor = true;
@@ -243,27 +268,30 @@
             // 
             // tb_maxSpeed
             // 
-            this.tb_maxSpeed.Location = new System.Drawing.Point(145, 49);
+            this.tb_maxSpeed.Location = new System.Drawing.Point(176, 374);
+            this.tb_maxSpeed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tb_maxSpeed.Name = "tb_maxSpeed";
-            this.tb_maxSpeed.Size = new System.Drawing.Size(103, 20);
+            this.tb_maxSpeed.Size = new System.Drawing.Size(136, 22);
             this.tb_maxSpeed.TabIndex = 13;
             this.tb_maxSpeed.Text = "0";
             this.tb_maxSpeed.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Tb_maxSpeed_KeyPress);
             // 
             // tb_acceleretion
             // 
-            this.tb_acceleretion.Location = new System.Drawing.Point(145, 75);
+            this.tb_acceleretion.Location = new System.Drawing.Point(176, 406);
+            this.tb_acceleretion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tb_acceleretion.Name = "tb_acceleretion";
-            this.tb_acceleretion.Size = new System.Drawing.Size(103, 20);
+            this.tb_acceleretion.Size = new System.Drawing.Size(136, 22);
             this.tb_acceleretion.TabIndex = 13;
             this.tb_acceleretion.Text = "0";
             this.tb_acceleretion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Tb_acceleretion_KeyPress);
             // 
             // tb_deceleration
             // 
-            this.tb_deceleration.Location = new System.Drawing.Point(145, 102);
+            this.tb_deceleration.Location = new System.Drawing.Point(176, 440);
+            this.tb_deceleration.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tb_deceleration.Name = "tb_deceleration";
-            this.tb_deceleration.Size = new System.Drawing.Size(103, 20);
+            this.tb_deceleration.Size = new System.Drawing.Size(136, 22);
             this.tb_deceleration.TabIndex = 13;
             this.tb_deceleration.Text = "0";
             this.tb_deceleration.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Tb_deceleration_KeyPress);
@@ -271,28 +299,31 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 56);
+            this.label2.Location = new System.Drawing.Point(21, 69);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label2.Size = new System.Drawing.Size(123, 13);
+            this.label2.Size = new System.Drawing.Size(151, 17);
             this.label2.TabIndex = 14;
             this.label2.Text = "Макс. скорость, шаг/с";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 82);
+            this.label3.Location = new System.Drawing.Point(21, 101);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 13);
+            this.label3.Size = new System.Drawing.Size(129, 17);
             this.label3.TabIndex = 15;
             this.label3.Text = "Ускорние, шаг/с^2";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 109);
+            this.label4.Location = new System.Drawing.Point(21, 134);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 13);
+            this.label4.Size = new System.Drawing.Size(149, 17);
             this.label4.TabIndex = 15;
             this.label4.Text = "Торможение, шаг/с^2";
             // 
@@ -303,17 +334,19 @@
             "Линейный",
             "S-кривая",
             "Sin"});
-            this.cb_front.Location = new System.Drawing.Point(145, 129);
+            this.cb_front.Location = new System.Drawing.Point(193, 160);
+            this.cb_front.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cb_front.Name = "cb_front";
-            this.cb_front.Size = new System.Drawing.Size(103, 21);
+            this.cb_front.Size = new System.Drawing.Size(136, 24);
             this.cb_front.TabIndex = 16;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 137);
+            this.label5.Location = new System.Drawing.Point(21, 169);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 13);
+            this.label5.Size = new System.Drawing.Size(106, 17);
             this.label5.TabIndex = 15;
             this.label5.Text = "Тип ускорения";
             // 
@@ -323,17 +356,19 @@
             this.cb_dir.Items.AddRange(new object[] {
             "По часовой",
             "Против часовой"});
-            this.cb_dir.Location = new System.Drawing.Point(145, 156);
+            this.cb_dir.Location = new System.Drawing.Point(193, 192);
+            this.cb_dir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cb_dir.Name = "cb_dir";
-            this.cb_dir.Size = new System.Drawing.Size(103, 21);
+            this.cb_dir.Size = new System.Drawing.Size(136, 24);
             this.cb_dir.TabIndex = 16;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 162);
+            this.label6.Location = new System.Drawing.Point(21, 199);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 13);
+            this.label6.Size = new System.Drawing.Size(97, 17);
             this.label6.TabIndex = 15;
             this.label6.Text = "Направление";
             // 
@@ -349,9 +384,11 @@
             this.gb_comFields.Controls.Add(this.cb_boundRate);
             this.gb_comFields.Controls.Add(this.label1);
             this.gb_comFields.Controls.Add(this.cb_port);
-            this.gb_comFields.Location = new System.Drawing.Point(12, 23);
+            this.gb_comFields.Location = new System.Drawing.Point(16, 28);
+            this.gb_comFields.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gb_comFields.Name = "gb_comFields";
-            this.gb_comFields.Size = new System.Drawing.Size(229, 161);
+            this.gb_comFields.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gb_comFields.Size = new System.Drawing.Size(305, 198);
             this.gb_comFields.TabIndex = 17;
             this.gb_comFields.TabStop = false;
             this.gb_comFields.Text = "парметры COM-порта";
@@ -361,14 +398,20 @@
             this.gb_connecionBtns.Controls.Add(this.pb_status);
             this.gb_connecionBtns.Controls.Add(this.btn_disconect);
             this.gb_connecionBtns.Controls.Add(this.btn_connection);
-            this.gb_connecionBtns.Location = new System.Drawing.Point(10, 191);
+            this.gb_connecionBtns.Location = new System.Drawing.Point(13, 235);
+            this.gb_connecionBtns.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gb_connecionBtns.Name = "gb_connecionBtns";
-            this.gb_connecionBtns.Size = new System.Drawing.Size(230, 98);
+            this.gb_connecionBtns.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gb_connecionBtns.Size = new System.Drawing.Size(307, 121);
             this.gb_connecionBtns.TabIndex = 18;
             this.gb_connecionBtns.TabStop = false;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.numericUpDown4);
+            this.groupBox1.Controls.Add(this.numericUpDown3);
+            this.groupBox1.Controls.Add(this.numericUpDown2);
+            this.groupBox1.Controls.Add(this.numericUpDown1);
             this.groupBox1.Controls.Add(this.cb_dir);
             this.groupBox1.Controls.Add(this.cb_front);
             this.groupBox1.Controls.Add(this.label6);
@@ -376,28 +419,59 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.tb_deceleration);
-            this.groupBox1.Controls.Add(this.tb_acceleretion);
-            this.groupBox1.Controls.Add(this.tb_maxSpeed);
             this.groupBox1.Controls.Add(this.btn_send);
             this.groupBox1.Controls.Add(this.L_angle);
-            this.groupBox1.Controls.Add(this.tb_angle);
-            this.groupBox1.Location = new System.Drawing.Point(247, 23);
+            this.groupBox1.Location = new System.Drawing.Point(329, 28);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(273, 265);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(364, 326);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Параметры движения";
             // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(193, 61);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDown1.TabIndex = 17;
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(193, 93);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDown2.TabIndex = 18;
+            // 
+            // numericUpDown3
+            // 
+            this.numericUpDown3.Location = new System.Drawing.Point(193, 28);
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDown3.TabIndex = 19;
+            // 
+            // numericUpDown4
+            // 
+            this.numericUpDown4.Location = new System.Drawing.Point(193, 125);
+            this.numericUpDown4.Name = "numericUpDown4";
+            this.numericUpDown4.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDown4.TabIndex = 20;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(562, 450);
+            this.ClientSize = new System.Drawing.Size(749, 554);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gb_connecionBtns);
             this.Controls.Add(this.gb_comFields);
             this.Controls.Add(this.tb_recive);
+            this.Controls.Add(this.tb_acceleretion);
+            this.Controls.Add(this.tb_angle);
+            this.Controls.Add(this.tb_maxSpeed);
+            this.Controls.Add(this.tb_deceleration);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "StepperControl";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -406,6 +480,10 @@
             this.gb_connecionBtns.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -445,6 +523,10 @@
         private System.Windows.Forms.GroupBox gb_connecionBtns;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.NumericUpDown numericUpDown4;
+        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }
 
