@@ -15,6 +15,10 @@ namespace StepperControl
     {
         string dataOUT;
         string dataIN;
+        int dataInt;
+
+        string front;
+        string dir;
         public Form1()
         {
             InitializeComponent();
@@ -26,6 +30,15 @@ namespace StepperControl
             cb_port.Items.AddRange(ports);
             btn_disconect.Enabled = false;
             btn_connection.Enabled = true;
+
+            tb_angle.Enabled = false;
+            tb_maxSpeed.Enabled = false;
+            tb_acceleretion.Enabled = false;
+            tb_deceleration.Enabled = false;
+            cb_dir.Enabled = false;
+            cb_front.Enabled = false;
+            btn_send.Enabled = false;
+            
             
         }
 
@@ -43,6 +56,17 @@ namespace StepperControl
                 pb_status.Value = 100;
                 btn_connection.Enabled = false;
                 btn_disconect.Enabled = true;
+
+                tb_angle.Enabled = true;
+                tb_maxSpeed.Enabled = true;
+                tb_acceleretion.Enabled = true;
+                tb_deceleration.Enabled = true;
+                cb_dir.Enabled = true;
+                cb_front.Enabled = true;
+                btn_send.Enabled = true;
+
+                cb_front.SelectedIndex = 1;
+                cb_dir.SelectedIndex = 1;
             }
             catch (Exception err){
                 MessageBox.Show(err.Message,"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -58,6 +82,17 @@ namespace StepperControl
                 pb_status.Value = 0;
                 btn_connection.Enabled = true;
                 btn_disconect.Enabled = false;
+                tb_recive.Text = "";
+
+                tb_angle.Enabled = false;
+                tb_maxSpeed.Enabled = false;
+                tb_acceleretion.Enabled = false;
+                tb_deceleration.Enabled = false;
+                cb_dir.Enabled = false;
+                cb_front.Enabled = false;
+                btn_send.Enabled = false;
+               
+
             }
         }
 
@@ -65,20 +100,133 @@ namespace StepperControl
         {
             if (serialPort1.IsOpen)
             {
-                dataOUT = tb_angle.Text+ tb_acceleretion.Text;
-                serialPort1.WriteLine(dataOUT);
+               serialPort1.WriteLine(tb_angle.Text);
+                dataOUT = tb_angle.Text+ tb_maxSpeed.Text+tb_acceleretion.Text + tb_deceleration.Text;
+                serialPort1.WriteLine(tb_angle.Text);
+                serialPort1.WriteLine(tb_maxSpeed.Text);
+                serialPort1.WriteLine(tb_acceleretion.Text);
+                serialPort1.WriteLine(tb_deceleration.Text);
+                if (cb_dir.Text == "По часовой")
+                {
+                    serialPort1.WriteLine("1");
+                }
+                else
+                {
+                    serialPort1.WriteLine("2");
+                }
+                if (cb_front.Text == "Линейный")
+                {
+                    serialPort1.WriteLine("1");
+                }else if(cb_front.Text == "S-кривая")
+                {
+                    serialPort1.WriteLine("2");
+
+                }
+                else
+                {
+                    serialPort1.WriteLine("3");
+
+                }
+
             }
         }
 
         private void SerialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            dataIN = serialPort1.ReadExisting();
-            this.Invoke(new EventHandler(ShowData));
-        }
+            
+            
+                dataIN = serialPort1.ReadExisting();
+                this.Invoke(new EventHandler(ShowData));
+            
+         
 
+        }
         private void ShowData(object sender, EventArgs e)
         {
             tb_recive.Text = dataIN;
+
+            /*    dataInt = Int32.Parse(dataIN);
+                if (dataInt == 1) { 
+                tb_recive.Text = "Данные пришли";
+            }else if(dataInt == 2)
+                {
+                    tb_recive.Text = "Ошибка приёма данных";
+                }*/
+
+
+
+
+
         }
+
+        private void Tb_angle_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar)
+                  && !char.IsDigit(e.KeyChar)
+                  && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if (e.KeyChar == '.'
+                && (sender as TextBox).Text.IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Tb_maxSpeed_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar)
+                  && !char.IsDigit(e.KeyChar)
+                  && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if (e.KeyChar == '.'
+                && (sender as TextBox).Text.IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Tb_acceleretion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar)
+                  && !char.IsDigit(e.KeyChar)
+                  && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if (e.KeyChar == '.'
+                && (sender as TextBox).Text.IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Tb_deceleration_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar)
+                  && !char.IsDigit(e.KeyChar)
+                  && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if (e.KeyChar == '.'
+                && (sender as TextBox).Text.IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
+        }
+
+
     }
 }

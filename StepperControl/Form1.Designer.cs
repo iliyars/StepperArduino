@@ -60,6 +60,7 @@
             this.gb_comFields = new System.Windows.Forms.GroupBox();
             this.gb_connecionBtns = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.gb_comFields.SuspendLayout();
             this.gb_connecionBtns.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -98,12 +99,13 @@
             this.cb_boundRate.Items.AddRange(new object[] {
             "2400",
             "4800",
-            "9600"});
+            "9600",
+            "115200"});
             this.cb_boundRate.Location = new System.Drawing.Point(102, 46);
             this.cb_boundRate.Name = "cb_boundRate";
             this.cb_boundRate.Size = new System.Drawing.Size(121, 21);
             this.cb_boundRate.TabIndex = 3;
-            this.cb_boundRate.Text = "9600";
+            this.cb_boundRate.Text = "115200";
             // 
             // l_baudRate
             // 
@@ -128,6 +130,8 @@
             this.tb_angle.Name = "tb_angle";
             this.tb_angle.Size = new System.Drawing.Size(103, 20);
             this.tb_angle.TabIndex = 6;
+            this.tb_angle.Text = "0";
+            this.tb_angle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Tb_angle_KeyPress);
             // 
             // L_angle
             // 
@@ -243,6 +247,8 @@
             this.tb_maxSpeed.Name = "tb_maxSpeed";
             this.tb_maxSpeed.Size = new System.Drawing.Size(103, 20);
             this.tb_maxSpeed.TabIndex = 13;
+            this.tb_maxSpeed.Text = "0";
+            this.tb_maxSpeed.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Tb_maxSpeed_KeyPress);
             // 
             // tb_acceleretion
             // 
@@ -250,6 +256,8 @@
             this.tb_acceleretion.Name = "tb_acceleretion";
             this.tb_acceleretion.Size = new System.Drawing.Size(103, 20);
             this.tb_acceleretion.TabIndex = 13;
+            this.tb_acceleretion.Text = "0";
+            this.tb_acceleretion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Tb_acceleretion_KeyPress);
             // 
             // tb_deceleration
             // 
@@ -257,6 +265,8 @@
             this.tb_deceleration.Name = "tb_deceleration";
             this.tb_deceleration.Size = new System.Drawing.Size(103, 20);
             this.tb_deceleration.TabIndex = 13;
+            this.tb_deceleration.Text = "0";
+            this.tb_deceleration.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Tb_deceleration_KeyPress);
             // 
             // label2
             // 
@@ -290,7 +300,7 @@
             // 
             this.cb_front.FormattingEnabled = true;
             this.cb_front.Items.AddRange(new object[] {
-            "Линейны",
+            "Линейный",
             "S-кривая",
             "Sin"});
             this.cb_front.Location = new System.Drawing.Point(145, 129);
@@ -310,6 +320,9 @@
             // cb_dir
             // 
             this.cb_dir.FormattingEnabled = true;
+            this.cb_dir.Items.AddRange(new object[] {
+            "По часовой",
+            "Против часовой"});
             this.cb_dir.Location = new System.Drawing.Point(145, 156);
             this.cb_dir.Name = "cb_dir";
             this.cb_dir.Size = new System.Drawing.Size(103, 21);
@@ -431,6 +444,7 @@
         private System.Windows.Forms.GroupBox gb_comFields;
         private System.Windows.Forms.GroupBox gb_connecionBtns;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
