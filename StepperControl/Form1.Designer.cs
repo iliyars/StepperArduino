@@ -60,24 +60,17 @@
             this.gb_comFields = new System.Windows.Forms.GroupBox();
             this.gb_connecionBtns = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.l_inputCheck = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
             this.gb_comFields.SuspendLayout();
             this.gb_connecionBtns.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_connection
             // 
             this.btn_connection.Location = new System.Drawing.Point(0, 28);
-            this.btn_connection.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_connection.Margin = new System.Windows.Forms.Padding(4);
             this.btn_connection.Name = "btn_connection";
             this.btn_connection.Size = new System.Drawing.Size(132, 49);
             this.btn_connection.TabIndex = 0;
@@ -89,7 +82,7 @@
             // 
             this.cb_port.FormattingEnabled = true;
             this.cb_port.Location = new System.Drawing.Point(136, 23);
-            this.cb_port.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_port.Margin = new System.Windows.Forms.Padding(4);
             this.cb_port.Name = "cb_port";
             this.cb_port.Size = new System.Drawing.Size(160, 24);
             this.cb_port.TabIndex = 1;
@@ -113,7 +106,7 @@
             "9600",
             "115200"});
             this.cb_boundRate.Location = new System.Drawing.Point(136, 57);
-            this.cb_boundRate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_boundRate.Margin = new System.Windows.Forms.Padding(4);
             this.cb_boundRate.Name = "cb_boundRate";
             this.cb_boundRate.Size = new System.Drawing.Size(160, 24);
             this.cb_boundRate.TabIndex = 3;
@@ -131,21 +124,22 @@
             // 
             // tb_recive
             // 
-            this.tb_recive.Location = new System.Drawing.Point(16, 363);
-            this.tb_recive.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_recive.Location = new System.Drawing.Point(16, 362);
+            this.tb_recive.Margin = new System.Windows.Forms.Padding(4);
             this.tb_recive.Multiline = true;
             this.tb_recive.Name = "tb_recive";
-            this.tb_recive.Size = new System.Drawing.Size(676, 142);
+            this.tb_recive.Size = new System.Drawing.Size(676, 143);
             this.tb_recive.TabIndex = 5;
             // 
             // tb_angle
             // 
-            this.tb_angle.Location = new System.Drawing.Point(176, 339);
-            this.tb_angle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_angle.Location = new System.Drawing.Point(193, 31);
+            this.tb_angle.Margin = new System.Windows.Forms.Padding(4);
             this.tb_angle.Name = "tb_angle";
             this.tb_angle.Size = new System.Drawing.Size(136, 22);
             this.tb_angle.TabIndex = 6;
             this.tb_angle.Text = "0";
+            this.tb_angle.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Tb_angle_MouseClick);
             this.tb_angle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Tb_angle_KeyPress);
             // 
             // L_angle
@@ -200,7 +194,7 @@
             "7",
             "8"});
             this.cb_dataBits.Location = new System.Drawing.Point(136, 89);
-            this.cb_dataBits.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_dataBits.Margin = new System.Windows.Forms.Padding(4);
             this.cb_dataBits.Name = "cb_dataBits";
             this.cb_dataBits.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cb_dataBits.Size = new System.Drawing.Size(160, 24);
@@ -214,7 +208,7 @@
             "1",
             "2"});
             this.cb_stopBits.Location = new System.Drawing.Point(136, 121);
-            this.cb_stopBits.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_stopBits.Margin = new System.Windows.Forms.Padding(4);
             this.cb_stopBits.Name = "cb_stopBits";
             this.cb_stopBits.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cb_stopBits.Size = new System.Drawing.Size(160, 24);
@@ -229,7 +223,7 @@
             "Odd",
             "Even"});
             this.cb_parityBits.Location = new System.Drawing.Point(136, 153);
-            this.cb_parityBits.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_parityBits.Margin = new System.Windows.Forms.Padding(4);
             this.cb_parityBits.Name = "cb_parityBits";
             this.cb_parityBits.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cb_parityBits.Size = new System.Drawing.Size(160, 24);
@@ -239,7 +233,7 @@
             // btn_disconect
             // 
             this.btn_disconect.Location = new System.Drawing.Point(149, 28);
-            this.btn_disconect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_disconect.Margin = new System.Windows.Forms.Padding(4);
             this.btn_disconect.Name = "btn_disconect";
             this.btn_disconect.Size = new System.Drawing.Size(132, 49);
             this.btn_disconect.TabIndex = 0;
@@ -250,7 +244,7 @@
             // pb_status
             // 
             this.pb_status.Location = new System.Drawing.Point(3, 85);
-            this.pb_status.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pb_status.Margin = new System.Windows.Forms.Padding(4);
             this.pb_status.Name = "pb_status";
             this.pb_status.Size = new System.Drawing.Size(279, 28);
             this.pb_status.TabIndex = 11;
@@ -258,7 +252,7 @@
             // btn_send
             // 
             this.btn_send.Location = new System.Drawing.Point(21, 235);
-            this.btn_send.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_send.Margin = new System.Windows.Forms.Padding(4);
             this.btn_send.Name = "btn_send";
             this.btn_send.Size = new System.Drawing.Size(100, 49);
             this.btn_send.TabIndex = 12;
@@ -268,32 +262,35 @@
             // 
             // tb_maxSpeed
             // 
-            this.tb_maxSpeed.Location = new System.Drawing.Point(176, 374);
-            this.tb_maxSpeed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_maxSpeed.Location = new System.Drawing.Point(193, 66);
+            this.tb_maxSpeed.Margin = new System.Windows.Forms.Padding(4);
             this.tb_maxSpeed.Name = "tb_maxSpeed";
             this.tb_maxSpeed.Size = new System.Drawing.Size(136, 22);
             this.tb_maxSpeed.TabIndex = 13;
             this.tb_maxSpeed.Text = "0";
+            this.tb_maxSpeed.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Tb_maxSpeed_MouseClick);
             this.tb_maxSpeed.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Tb_maxSpeed_KeyPress);
             // 
             // tb_acceleretion
             // 
-            this.tb_acceleretion.Location = new System.Drawing.Point(176, 406);
-            this.tb_acceleretion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_acceleretion.Location = new System.Drawing.Point(193, 98);
+            this.tb_acceleretion.Margin = new System.Windows.Forms.Padding(4);
             this.tb_acceleretion.Name = "tb_acceleretion";
             this.tb_acceleretion.Size = new System.Drawing.Size(136, 22);
             this.tb_acceleretion.TabIndex = 13;
             this.tb_acceleretion.Text = "0";
+            this.tb_acceleretion.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Tb_acceleretion_MouseClick);
             this.tb_acceleretion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Tb_acceleretion_KeyPress);
             // 
             // tb_deceleration
             // 
-            this.tb_deceleration.Location = new System.Drawing.Point(176, 440);
-            this.tb_deceleration.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_deceleration.Location = new System.Drawing.Point(193, 132);
+            this.tb_deceleration.Margin = new System.Windows.Forms.Padding(4);
             this.tb_deceleration.Name = "tb_deceleration";
             this.tb_deceleration.Size = new System.Drawing.Size(136, 22);
             this.tb_deceleration.TabIndex = 13;
             this.tb_deceleration.Text = "0";
+            this.tb_deceleration.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Tb_deceleration_MouseClick);
             this.tb_deceleration.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Tb_deceleration_KeyPress);
             // 
             // label2
@@ -335,7 +332,7 @@
             "S-кривая",
             "Sin"});
             this.cb_front.Location = new System.Drawing.Point(193, 160);
-            this.cb_front.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_front.Margin = new System.Windows.Forms.Padding(4);
             this.cb_front.Name = "cb_front";
             this.cb_front.Size = new System.Drawing.Size(136, 24);
             this.cb_front.TabIndex = 16;
@@ -357,7 +354,7 @@
             "По часовой",
             "Против часовой"});
             this.cb_dir.Location = new System.Drawing.Point(193, 192);
-            this.cb_dir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_dir.Margin = new System.Windows.Forms.Padding(4);
             this.cb_dir.Name = "cb_dir";
             this.cb_dir.Size = new System.Drawing.Size(136, 24);
             this.cb_dir.TabIndex = 16;
@@ -385,9 +382,9 @@
             this.gb_comFields.Controls.Add(this.label1);
             this.gb_comFields.Controls.Add(this.cb_port);
             this.gb_comFields.Location = new System.Drawing.Point(16, 28);
-            this.gb_comFields.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gb_comFields.Margin = new System.Windows.Forms.Padding(4);
             this.gb_comFields.Name = "gb_comFields";
-            this.gb_comFields.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gb_comFields.Padding = new System.Windows.Forms.Padding(4);
             this.gb_comFields.Size = new System.Drawing.Size(305, 198);
             this.gb_comFields.TabIndex = 17;
             this.gb_comFields.TabStop = false;
@@ -399,64 +396,45 @@
             this.gb_connecionBtns.Controls.Add(this.btn_disconect);
             this.gb_connecionBtns.Controls.Add(this.btn_connection);
             this.gb_connecionBtns.Location = new System.Drawing.Point(13, 235);
-            this.gb_connecionBtns.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gb_connecionBtns.Margin = new System.Windows.Forms.Padding(4);
             this.gb_connecionBtns.Name = "gb_connecionBtns";
-            this.gb_connecionBtns.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gb_connecionBtns.Padding = new System.Windows.Forms.Padding(4);
             this.gb_connecionBtns.Size = new System.Drawing.Size(307, 121);
             this.gb_connecionBtns.TabIndex = 18;
             this.gb_connecionBtns.TabStop = false;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.numericUpDown4);
-            this.groupBox1.Controls.Add(this.numericUpDown3);
-            this.groupBox1.Controls.Add(this.numericUpDown2);
-            this.groupBox1.Controls.Add(this.numericUpDown1);
+            this.groupBox1.Controls.Add(this.l_inputCheck);
             this.groupBox1.Controls.Add(this.cb_dir);
             this.groupBox1.Controls.Add(this.cb_front);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.tb_acceleretion);
             this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.tb_angle);
             this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.tb_maxSpeed);
+            this.groupBox1.Controls.Add(this.tb_deceleration);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btn_send);
             this.groupBox1.Controls.Add(this.L_angle);
             this.groupBox1.Location = new System.Drawing.Point(329, 28);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(364, 326);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Параметры движения";
             // 
-            // numericUpDown1
+            // l_inputCheck
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(193, 61);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDown1.TabIndex = 17;
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Location = new System.Drawing.Point(193, 93);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDown2.TabIndex = 18;
-            // 
-            // numericUpDown3
-            // 
-            this.numericUpDown3.Location = new System.Drawing.Point(193, 28);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDown3.TabIndex = 19;
-            // 
-            // numericUpDown4
-            // 
-            this.numericUpDown4.Location = new System.Drawing.Point(193, 125);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDown4.TabIndex = 20;
+            this.l_inputCheck.AutoSize = true;
+            this.l_inputCheck.Location = new System.Drawing.Point(144, 251);
+            this.l_inputCheck.Name = "l_inputCheck";
+            this.l_inputCheck.Size = new System.Drawing.Size(0, 17);
+            this.l_inputCheck.TabIndex = 17;
             // 
             // Form1
             // 
@@ -467,11 +445,7 @@
             this.Controls.Add(this.gb_connecionBtns);
             this.Controls.Add(this.gb_comFields);
             this.Controls.Add(this.tb_recive);
-            this.Controls.Add(this.tb_acceleretion);
-            this.Controls.Add(this.tb_angle);
-            this.Controls.Add(this.tb_maxSpeed);
-            this.Controls.Add(this.tb_deceleration);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "StepperControl";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -480,10 +454,6 @@
             this.gb_connecionBtns.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -523,10 +493,7 @@
         private System.Windows.Forms.GroupBox gb_connecionBtns;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label l_inputCheck;
     }
 }
 

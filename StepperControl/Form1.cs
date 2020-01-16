@@ -100,32 +100,41 @@ namespace StepperControl
         {
             if (serialPort1.IsOpen)
             {
-               serialPort1.WriteLine(tb_angle.Text);
-                dataOUT = tb_angle.Text+ tb_maxSpeed.Text+tb_acceleretion.Text + tb_deceleration.Text;
-                serialPort1.WriteLine(tb_angle.Text);
-                serialPort1.WriteLine(tb_maxSpeed.Text);
-                serialPort1.WriteLine(tb_acceleretion.Text);
-                serialPort1.WriteLine(tb_deceleration.Text);
-                if (cb_dir.Text == "По часовой")
+                if ((tb_angle.Text == "" || tb_angle.Text == "0")|| (tb_acceleretion.Text == "" || tb_acceleretion.Text == "0") || (tb_deceleration.Text ==""||tb_deceleration.Text =="0") || (tb_maxSpeed.Text ==""|| tb_maxSpeed.Text == "0"))
                 {
-                    serialPort1.WriteLine("1");
+                    l_inputCheck.Text = "Введите все данные";
                 }
                 else
                 {
-                    serialPort1.WriteLine("2");
-                }
-                if (cb_front.Text == "Линейный")
-                {
-                    serialPort1.WriteLine("1");
-                }else if(cb_front.Text == "S-кривая")
-                {
-                    serialPort1.WriteLine("2");
+                    l_inputCheck.Text = "";
+                    serialPort1.WriteLine(tb_angle.Text);
+                    dataOUT = tb_angle.Text + tb_maxSpeed.Text + tb_acceleretion.Text + tb_deceleration.Text;
+                    serialPort1.WriteLine(tb_angle.Text);
+                    serialPort1.WriteLine(tb_maxSpeed.Text);
+                    serialPort1.WriteLine(tb_acceleretion.Text);
+                    serialPort1.WriteLine(tb_deceleration.Text);
+                    if (cb_dir.Text == "По часовой")
+                    {
+                        serialPort1.WriteLine("1");
+                    }
+                    else
+                    {
+                        serialPort1.WriteLine("2");
+                    }
+                    if (cb_front.Text == "Линейный")
+                    {
+                        serialPort1.WriteLine("1");
+                    }
+                    else if (cb_front.Text == "S-кривая")
+                    {
+                        serialPort1.WriteLine("2");
 
-                }
-                else
-                {
-                    serialPort1.WriteLine("3");
+                    }
+                    else
+                    {
+                        serialPort1.WriteLine("3");
 
+                    }
                 }
 
             }
@@ -225,6 +234,26 @@ namespace StepperControl
             {
                 e.Handled = true;
             }
+        }
+
+        private void Tb_angle_MouseClick(object sender, MouseEventArgs e)
+        {
+            tb_angle.Text = "";
+        }
+
+        private void Tb_maxSpeed_MouseClick(object sender, MouseEventArgs e)
+        {
+            tb_maxSpeed.Text = "";
+        }
+
+        private void Tb_acceleretion_MouseClick(object sender, MouseEventArgs e)
+        {
+            tb_acceleretion.Text = "";
+        }
+
+        private void Tb_deceleration_MouseClick(object sender, MouseEventArgs e)
+        {
+            tb_deceleration.Text = "";
         }
 
 
